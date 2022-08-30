@@ -1,0 +1,33 @@
+.sort {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
+}
+
+.sort button {
+	display: flex;
+	align-items: center;
+	border: none;
+	background: none;
+	font-size: 16px;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.sort__icon {
+	display: none;
+	margin-right: 8px;
+}
+
+.sort_name {
+	display: none;
+}
+
+.active .sort__icon {
+	display: block;
+}
+
+.active {
+	color: var(--primary);
+	font-weight: bold;
+}

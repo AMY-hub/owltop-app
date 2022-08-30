@@ -1,0 +1,25 @@
+.advantages {
+	display: grid;
+	gap: 30px;
+}
+
+.advantage {
+	display: grid;
+	position: relative;
+	grid-template-columns: 50px 1fr;
+	gap: 10px 40px;
+}
+
+.advantage__description {
+	grid-column-start: 2;
+}
+
+.advantage__title {
+	align-self: center;
+	font-weight: bold;
+}
+
+.vline {
+	opacity: 0.5;
+	background: var(--gray-light);
+}
