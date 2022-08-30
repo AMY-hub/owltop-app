@@ -9,7 +9,7 @@ import { WithLayout } from '../../layout/Layout';
 
 const Category = ({ firstCategory }: CategoryProps): JSX.Element => {
     return (
-        <div>Category: {firstCategory}</div>
+        <div>Раздел: {firstCategory}</div>
     );
 };
 

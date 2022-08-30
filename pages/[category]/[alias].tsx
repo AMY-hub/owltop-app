@@ -11,13 +11,18 @@ import { TopLevelCategory, TopPageModel } from '../../interfaces/page.interface'
 import { ProductModel } from '../../interfaces/product.interface';
 import { WithLayout } from '../../layout/Layout';
 import { TopPageComponent } from '../../page-components';
+import { Error404 } from '../404';
 
-function TopPage({ firstCategory, menu, page, products }: TopPageProps): JSX.Element {
+function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
 
     const router = useRouter();
 
     if (router.isFallback) {
         return <div>Loading...</div>;
+    }
+
+    if (!page || !products) {
+        return <Error404 />;
     }
 
     return (
@@ -32,7 +37,6 @@ function TopPage({ firstCategory, menu, page, products }: TopPageProps): JSX.Ele
             <TopPageComponent
                 firstCategory={firstCategory} page={page} products={products} />
         </>
-
     );
 }
 
@@ -42,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     let paths: string[] = [];
 
     for (const m of topLevelMenu) {
-        const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+        const { data: menu } = await axios.post<MenuItem[]>(API.toppage.find, {
             firstCategory: m.id
         });
         paths = paths.concat(menu.flatMap(el => el.pages.map(p => `/${m.route}/` + p.alias)));

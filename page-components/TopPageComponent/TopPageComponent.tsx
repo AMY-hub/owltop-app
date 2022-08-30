@@ -47,17 +47,19 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
             {firstCategory == TopLevelCategory.Courses && page.hh &&
                 <section className={styles.hh}>
                     <div className={styles.hh_title}>
-                        <Htag tag='h2'>Вакансии - {page.category}</Htag>
                         <Tag tagSize='m' color='red'>hh.ru</Tag>
+                        <Htag tag='h2'>Вакансии - {page.category}</Htag>
                     </div>
                     <HhData {...page.hh} />
                 </section>
             }
-            {page.advantages?.length &&
+            {page.advantages &&
+                (page.advantages?.length > 0 && page.advantages[0].title) ?
                 <section>
                     <Htag tag='h2'>Преимущества</Htag>
                     <Advantages advantages={page.advantages} />
                 </section>
+                : <></>
             }
             {page.seoText &&
                 <div className={styles.seo}

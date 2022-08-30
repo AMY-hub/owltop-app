@@ -28,6 +28,7 @@ export const ScrollToTop = (): JSX.Element => {
             initial={{ opacity: 0 }}
         >
             <ButtonIcon
+                aria-label='К началу страницы'
                 styleType='primary'
                 icon='arrow'
                 onClick={scrollToTop} />

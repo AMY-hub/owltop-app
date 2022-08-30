@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 
-import { Button, Htag, Input, Paragraph, Rating, Tag, TextArea } from '../components';
+import { Button, Htag, Paragraph, Tag, } from '../components';
 import { API } from '../helpers/api';
+import { TopLevelCategory } from '../interfaces/page.interface';
 import { MenuItem } from '../interfaces/menu.interface';
 import { WithLayout } from '../layout/Layout';
 
 function Home({ menu, firstCategory }: HomeProps): JSX.Element {
-  const [rating, setRating] = useState(3);
 
   return (
     <>
@@ -26,9 +25,6 @@ function Home({ menu, firstCategory }: HomeProps): JSX.Element {
       <Tag tagSize='m' color='primary'>exmpl4</Tag>
       <Tag tagSize='m' color='gray'>exmpl5</Tag>
       <Tag color='red' href='#'>exmpl6</Tag>
-      <Rating rating={rating} isEditable={true} setRating={setRating} />
-      <Input placeholder='Name' />
-      <TextArea placeholder="Text" rows={5} />
     </>
   );
 }
@@ -37,7 +33,7 @@ export default WithLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
-  const firstCategory = 0;
+  const firstCategory = TopLevelCategory.Courses;
 
   const { data: menu } = await axios.post<MenuItem[]>(API.toppage.find, {
     firstCategory

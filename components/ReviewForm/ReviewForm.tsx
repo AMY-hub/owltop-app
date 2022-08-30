@@ -98,9 +98,9 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
                     onClick={() => clearErrors()}
                 >Отправить
                 </Button>
-                <span className={styles.form__info}>
+                <p className={styles.form__info}>
                     * Перед публикацией отзыв пройдет предварительную модерацию и проверку
-                </span>
+                </p>
             </div>
             {error &&
                 <div className={cn(styles.message, styles.error)} role='alert'>

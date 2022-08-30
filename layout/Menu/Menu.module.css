@@ -32,8 +32,7 @@
 }
 
 .second_level {
-	margin-bottom: 10px;
-	padding: 0;
+	padding: 0 0 10px 0;
 	border: none;
 	outline-offset: -0.5px;
 	background: none;
@@ -52,7 +51,7 @@
 
 .third_level {
 	display: block;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
 	outline-offset: -0.5px;
 	color: var(--gray-dark);
 	font-size: 14px;

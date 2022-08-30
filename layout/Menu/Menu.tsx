@@ -17,12 +17,14 @@ export const Menu = (): JSX.Element => {
     const router = useRouter();
     const shouldReduceMotion = useReducedMotion();
 
+    console.log('MENU:', menu);
+    console.log('Category:', firstCategory);
+
     const variants = {
         visible: {
-            marginBottom: 20,
+            marginBottom: '20px',
             transition: shouldReduceMotion ? {} : {
-                when: 'beforeChildren',
-                staggerChildren: 0.1
+                staggerChildren: 0.05
             }
         },
         hidden: { marginBottom: 0 }
@@ -58,11 +60,11 @@ export const Menu = (): JSX.Element => {
                     <li key={m.route} aria-expanded={m.id === firstCategory}>
                         <Link href={`/${m.route}`}>
                             <a>
-                                <div className={cn(styles.top_level__item, {
+                                <span className={cn(styles.top_level__item, {
                                     [styles.top_level__item_active]: m.id === firstCategory
                                 })}>
                                     {m.icon}                                    <span>{m.name}</span>
-                                </div>
+                                </span>
                             </a>
                         </Link>
                         {m.id === firstCategory && buildSecondLevel(m)}

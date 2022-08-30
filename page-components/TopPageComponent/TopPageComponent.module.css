@@ -18,8 +18,8 @@
 .hh_title {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	align-items: center;
 	justify-items: left;
+	align-items: baseline;
 	gap: 21px;
 }
 
@@ -46,5 +46,10 @@
 	.header {
 		grid-template-columns: auto 1fr;
 		gap: 20px 10px;
+	}
+
+	.hh_title {
+		grid-template-columns: 1fr;
+		gap: 5px;
 	}
 }
