@@ -8,9 +8,9 @@
 }
 
 .main__link {
-	font-weight: bold;
-	color: var(--primary);
 	transition: all 500ms;
+	color: var(--primary);
+	font-weight: bold;
 }
 
 .main__link:hover {
@@ -24,7 +24,7 @@
 }
 
 @media screen and (max-width: 460px) {
-	.main{
+	.main {
 		gap: 20px;
 	}
 

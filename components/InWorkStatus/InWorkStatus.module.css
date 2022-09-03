@@ -3,19 +3,19 @@
 	grid-template-columns: 80px auto;
 	align-items: center;
 	justify-content: center;
-	gap: 20px;
-	padding: 30px;
 	margin: 40px 30px;
-	font-size: 18px;
+	padding: 30px;
 	border-radius: 5px;
-	background-color: #fafafc;
+	background-color: #FAFAFC;
 	box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+	font-size: 18px;
+	gap: 20px;
 }
 
 .in_work__title {
-	font-size: 22px;
 	padding-left: 20px;
 	border-left: 2px solid var(--accent-second);
+	font-size: 22px;
 }
 
 .in_work svg {
@@ -36,7 +36,7 @@
 	}
 
 	.in_work svg {
-	width: 60px;
-	height: 60px;
+		width: 60px;
+		height: 60px;
 	}
 }
