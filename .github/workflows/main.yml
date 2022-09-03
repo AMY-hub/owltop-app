@@ -9,8 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
