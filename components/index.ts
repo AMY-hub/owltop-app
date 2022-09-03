@@ -17,3 +17,5 @@ export * from './ErrorMessage/ErrorMessage';
 export * from './ScrollToTop/ScrollToTop';
 export * from './ButtonIcon/ButtonIcon';
 export * from './Advantages/Advantages';
+export * from './InWorkStatus/InWorkStatus';
+export * from './Preloader/Preloader';

@@ -1,65 +1,64 @@
 .error_page {
-    display: flex;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-items: center;
-    padding: 30px;
-    margin-left: 20px;
-    border-left: 2px solid var(--accent-first);
-
-    font-size: 18px;
-    line-height: 26px;
+	display: flex;
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	margin-left: 20px;
+	padding: 30px;
+	border-left: 2px solid var(--accent-first);
+	font-size: 18px;
+	line-height: 26px;
+	justify-items: center;
 }
 
 .error_page a {
-    font-weight: bold;
-    color: var(--primary);
+	color: var(--primary);
+	font-weight: bold;
 }
 
 .error_page a:hover {
-    font-weight: bold;
-    color: var(--primary-hover);
-    border-bottom: 1px solid var(--primary-hover);
+	border-bottom: 1px solid var(--primary-hover);
+	color: var(--primary-hover);
+	font-weight: bold;
 }
 
 .error_page__header {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    align-items: center;
+	display: grid;
+	grid-template-columns: 80px 1fr;
+	align-items: center;
 }
 
 .error_page__header svg path {
-    fill: var(--primary);
+	fill: var(--primary);
 }
 
 .error_page__title {
-    font-size: 34px;
-    font-weight: bold;
-    color: var(--primary);
+	color: var(--primary);
+	font-size: 34px;
+	font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
 	.error_page__header {
-        grid-template-columns: 70px 1fr;
-    }
+		grid-template-columns: 70px 1fr;
+	}
 
-    .error_page__title {
-        font-size: 28px;
-    }
+	.error_page__title {
+		font-size: 28px;
+	}
 }
 
 @media screen and (max-width: 480px) {
-    .error_page {
-        margin-left: 0;
-        padding: 15px;
-    }
+	.error_page {
+		margin-left: 0;
+		padding: 15px;
+	}
 
 	.error_page__header {
-        grid-template-columns: 60px 1fr;
-    }
+		grid-template-columns: 60px 1fr;
+	}
 
-    .error_page__title {
-        font-size: 24px;
-    }
+	.error_page__title {
+		font-size: 24px;
+	}
 }

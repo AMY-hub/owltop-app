@@ -27,22 +27,24 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
         <div className={styles.wrapper}>
             <header className={styles.header}>
                 <Htag tag='h1'>{page.title}</Htag>
-                {products.length &&
-                    <Tag
-                        tagSize='m' color='gray'
-                        aria-label={`количество: ${products.length}`}>
-                        {products.length}
-                    </Tag>}
+                <Tag
+                    tagSize='m' color='gray'
+                    aria-label={`количество: ${products.length}`}>
+                    {products.length}
+                </Tag>
                 <Sort sort={sort} setSort={setSort} />
             </header>
             <section className={styles.products} role='list'>
-                {sortedProducts.length &&
+                {sortedProducts.length > 0 ?
                     sortedProducts.map(p => (
                         <Product
                             role='listitem'
                             layout={shouldReduceMotion ? false : true}
                             key={p._id}
-                            product={p} />))}
+                            product={p} />))
+                    :
+                    <div>Нет продуктов в данной категории.</div>
+                }
             </section>
             {firstCategory == TopLevelCategory.Courses && page.hh &&
                 <section className={styles.hh}>
@@ -66,10 +68,14 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
                     dangerouslySetInnerHTML={{ __html: page.seoText }}
                 />
             }
-            <section>
-                <Htag tag='h2'>Получаемые навыки</Htag>
-                {page.tags.map(t => <Tag key={t} tagSize='s' color='primary'>{t}</Tag>)}
-            </section>
+            {sortedProducts.length > 0 ?
+                <section>
+                    <Htag tag='h2'>Получаемые навыки</Htag>
+                    {page.tags.map(t => <Tag key={t} tagSize='s' color='primary'>{t}</Tag>)}
+                </section>
+                :
+                <></>
+            }
         </div>
     );
 };

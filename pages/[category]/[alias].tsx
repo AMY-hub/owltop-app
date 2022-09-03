@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
+import { Preloader } from '../../components';
 
 import { API } from '../../helpers/api';
 import { topLevelMenu } from '../../helpers/helpers';
@@ -18,7 +19,7 @@ function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
     const router = useRouter();
 
     if (router.isFallback) {
-        return <div>Loading...</div>;
+        return <Preloader />;
     }
 
     if (!page || !products) {

@@ -40,6 +40,8 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
             {...props}>
             <Logo />
             <ButtonIcon
+                tabIndex={isOpened ? 0 : 1}
+                aria-label={'Открыть меню'}
                 onClick={() => setIsOpened(!isOpened)}
                 styleType='white'
                 icon='menu' />
@@ -51,6 +53,8 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
             >
                 <SideBar />
                 <ButtonIcon
+                    aria-label={'Закрыть меню'}
+                    tabIndex={isOpened ? 1 : 0}
                     onClick={() => setIsOpened(!isOpened)}
                     className={styles.menu_close}
                     styleType='white'

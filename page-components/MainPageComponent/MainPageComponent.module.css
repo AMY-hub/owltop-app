@@ -1,0 +1,34 @@
+.main {
+	display: grid;
+	gap: 30px;
+}
+
+.main__title span {
+	color: var(--primary-hover);
+}
+
+.main__link {
+	font-weight: bold;
+	color: var(--primary);
+	transition: all 500ms;
+}
+
+.main__link:hover {
+	color: var(--primary-hover);
+	text-decoration: underline;
+}
+
+.main p {
+	padding-left: 10px;
+	border-left: 3px solid var(--primary);
+}
+
+@media screen and (max-width: 460px) {
+	.main{
+		gap: 20px;
+	}
+
+	.main__title {
+		font-size: 20px;
+	}
+}

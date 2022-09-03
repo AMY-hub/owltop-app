@@ -17,9 +17,6 @@ export const Menu = (): JSX.Element => {
     const router = useRouter();
     const shouldReduceMotion = useReducedMotion();
 
-    console.log('MENU:', menu);
-    console.log('Category:', firstCategory);
-
     const variants = {
         visible: {
             marginBottom: '20px',

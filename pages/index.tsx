@@ -2,29 +2,20 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import axios from 'axios';
 
-import { Button, Htag, Paragraph, Tag, } from '../components';
 import { API } from '../helpers/api';
 import { TopLevelCategory } from '../interfaces/page.interface';
 import { MenuItem } from '../interfaces/menu.interface';
 import { WithLayout } from '../layout/Layout';
+import { MainPageComponent } from '../page-components';
 
 function Home({ menu, firstCategory }: HomeProps): JSX.Element {
 
   return (
     <>
       <Head>
-        <title>Index title</title>
+        <title>OWLtop</title>
       </Head>
-      <Htag tag='h1'>Text</Htag>
-      <Button styleType='primary' arrow='right'>Button</Button>
-      <Button styleType='ghost' arrow='down'>Button</Button>
-      <Paragraph fontSize='m'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut sapiente quo natus, reprehenderit tempora vero enim at soluta explicabo perferendis, architecto et similique nesciunt deserunt id laborum culpa ea. Quos?</Paragraph>
-      <Tag tagSize='s' color='red'>exmpl1</Tag>
-      <Tag tagSize='m'>exmpl2</Tag>
-      <Tag tagSize='s' color='green'>exmpl3</Tag>
-      <Tag tagSize='m' color='primary'>exmpl4</Tag>
-      <Tag tagSize='m' color='gray'>exmpl5</Tag>
-      <Tag color='red' href='#'>exmpl6</Tag>
+      <MainPageComponent />
     </>
   );
 }
