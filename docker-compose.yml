@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: owltop-app
+    image: ghcr.io/amy-hub/owltop-app/owltop-app:develop
     container_name: owltop
     restart: always
     ports:

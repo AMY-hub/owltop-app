@@ -158,6 +158,21 @@
 	color: var(--primary);
 }
 
+.actions__link {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 10px;
+	transition: all 500ms;
+	border-radius: 5px;
+	font-size: 14px;
+	background-color: var(--primary);
+	color: var(--light);
+}
+
+.actions__link:hover {
+	background-color: var(--primary-hover);
+}
+
 @media screen and (max-width: 1320px) {
 	.product {
 		grid-template-areas:

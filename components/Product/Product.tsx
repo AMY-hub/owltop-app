@@ -16,9 +16,11 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 
     const scrollToReview = (): void => {
         setIsReviewOpen(true);
+        console.log(reviewRef.current);
+
         reviewRef.current?.scrollIntoView({
             behavior: 'smooth',
-            block: 'start'
+            block: 'center'
         });
         reviewRef.current?.focus();
     };
@@ -113,11 +115,15 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
                 </div>
                 <Divider className={styles.hr} />
                 <div className={styles.actions}>
-                    <Button styleType='primary'>Узнать подробнее</Button>
+                    <a
+                        className={styles.actions__link}
+                        href={product.link} target='_blank'>
+                        Узнать подробнее
+                    </a>
                     <Button
                         styleType='ghost'
                         arrow={isReviewOpen ? 'down' : 'right'}
-                        onClick={() => setIsReviewOpen(!isReviewOpen)}
+                        onClick={(): void => setIsReviewOpen(!isReviewOpen)}
                         className={styles.review_btn}>
                         Читать отзывы
                     </Button>

@@ -35,7 +35,7 @@ export const Menu = (): JSX.Element => {
     const openSecondLevel = (levelName: string): void => {
         setMenu && setMenu(menu.map(m => {
             if (m._id.secondCategory === levelName) {
-                setAnnounse(m.isOpened ? 'closed' : 'opened')
+                setAnnounse(m.isOpened ? 'closed' : 'opened');
                 m.isOpened = !m.isOpened;
             }
             return m;
@@ -84,8 +84,8 @@ export const Menu = (): JSX.Element => {
                         <li key={m._id.secondCategory}>
                             <button
                                 className={styles.second_level}
-                                onClick={() => openSecondLevel(m._id.secondCategory)}
-                                onKeyDown={(e: KeyboardEvent) => openSecondLevelKey(e, m._id.secondCategory)}
+                                onClick={(): void => openSecondLevel(m._id.secondCategory)}
+                                onKeyDown={(e: KeyboardEvent): void => openSecondLevelKey(e, m._id.secondCategory)}
                             >{m._id.secondCategory}
                             </button>
                             <motion.ul
@@ -105,6 +105,8 @@ export const Menu = (): JSX.Element => {
     };
 
     const buildThirdLevel = (pages: PageItem[], route: string, isOpen: boolean): JSX.Element[] => {
+        const path = router.asPath.split('#')[0];
+
         return (
             pages.map(p => (
                 <motion.li key={p._id} variants={variantsChildren}>
@@ -112,9 +114,9 @@ export const Menu = (): JSX.Element => {
                         <a
                             tabIndex={isOpen ? 0 : -1}
                             className={cn(styles.third_level, {
-                                [styles.third_level_active]: `/${route}/${p.alias}` == router.asPath
+                                [styles.third_level_active]: `/${route}/${p.alias}` == path
                             })}
-                            aria-current={`/${route}/${p.alias}` == router.asPath ? 'page' : false}
+                            aria-current={`/${route}/${p.alias}` == path ? 'page' : false}
                         >
                             {p.category}
                         </a>
